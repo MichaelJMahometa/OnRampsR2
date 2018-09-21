@@ -1,0 +1,14 @@
+Package: OnRampsR
+Type: Package
+Title: Collection of functions for The University of Texas OnRamps Statistics course.
+Version: 1.6
+Author: Michael J. Mahometa
+Maintainer: Michael J. Mahometa <michaeljmahometa@austin.utexas.edu>
+Description: Helper functions for the OnRamps Statistics course (SDS302) taught at The University of Texas at Austin.
+    These functions do several helper things. There are functions to fit single models (linear, exponential, and logistic growth), with minimal output. There are functions to fit all three models to examine overall model fit.
+URL: http://github.com/MichaelJMahometa/OnRampsR
+BugReports: http://github.com/MichaelJMahometa/OnRampsR/issues
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.0
