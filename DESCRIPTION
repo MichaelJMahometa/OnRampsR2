@@ -1,7 +1,7 @@
 Package: OnRampsR
 Type: Package
 Title: Collection of functions for The University of Texas OnRamps Statistics course.
-Version: 2.0
+Version: 1.6
 Author: Michael J. Mahometa
 Maintainer: Michael J. Mahometa <michaeljmahometa@austin.utexas.edu>
 Description: Helper functions for the OnRamps Statistics course (SDS302) taught at The University of Texas at Austin.
@@ -11,10 +11,4 @@ BugReports: http://github.com/MichaelJMahometa/OnRampsR/issues
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-Imports:
-    tidyverse,
-    mosaic
-Depends:
-    tidyverse,
-    mosaic
-RoxygenNote: 7.0.2
+RoxygenNote: 6.1.0
