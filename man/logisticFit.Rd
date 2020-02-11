@@ -4,29 +4,31 @@
 \alias{logisticFit}
 \title{Logistic Growth Fit and plot of data}
 \usage{
-logisticFit(simpleformula, data, xlab = NULL, ylab = NULL)
+logisticFit(x, y, xlab = deparse(substitute(x)),
+  ylab = deparse(substitute(y)))
 }
 \arguments{
-\item{simpleformula}{a designation for the model formula in \code{y ~ x} notation. Must be in formula notation--see details.}
+\item{x}{a designation for a variable on the x-axis. Can be a vector or object.}
 
-\item{data}{a data frame in which to evaluate formulas.}
+\item{y}{a designation for a variable on the y-axis. Can be a vector or object.}
 
-\item{xlab}{optional. Text for x-axis title label for produced graph.}
+\item{xlab}{optional. Text for x-axis title label.}
 
-\item{ylab}{optional. Text for y-axis title label for produced graph.}
+\item{ylab}{optional. Text for y-axis title label.
+
+#' @seealso
+\code{\link{expFit}}
+\code{\link{logisticFit}}
+\code{\link{tripleFit}}}
 }
 \description{
 Fit a logistic growth model to two variables, return basic output about the model, and plot the model.
 }
-\details{
-This function is one of a group of functions that take a specific input in the form of \code{y ~ x}, following (in-part) the mosaic package formula notation. However, only simple formulas are allowed with no grouping parameter, nor multiple predictor variables.
-}
 \examples{
 data(wolf)
-wolf <- wolf \%>\%
-  mutate(Time = Year - min(Year))
-logisticFit(Number ~ Time, data=wolf)
-logisticFit(Number ~ Time, data=wolf, xlab="Years since 1995", ylab="Number of Wolves")
+wolf$Time <- wolf$Year - min(wolf$Year)
+logisticFit(wolf$Time, wolf$Number)
+logisticFit(wolf$Time, wolf$Number, xlab="Years Since 1995", ylab="Number of Wolves")
 
 }
 \seealso{

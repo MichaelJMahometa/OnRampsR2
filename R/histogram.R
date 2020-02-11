@@ -23,8 +23,6 @@
 #' histogram(mtcars$hp, breaks=seq(50, 350, by=25))
 #' histogram(mtcars$hp, breaks=seq(50, 350, by=25), table=TRUE)
 #'
-#' @keywords internal
-#'
 #' @export
 histogram <- function(x, breaks=NULL, table=FALSE, right=FALSE, xlab=deparse(substitute(x)), title=NULL,...){
   if(is.null(title)){

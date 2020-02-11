@@ -4,28 +4,20 @@
 \alias{tripleFit}
 \title{Fit three models at once}
 \usage{
-tripleFit(simpleformula, data, xlab = NULL, ylab = NULL)
+tripleFit(x, y)
 }
 \arguments{
-\item{simpleformula}{a designation for the model formula in \code{y ~ x} notation. Must be in formula notation--see details.}
+\item{x}{a designation for a variable on the x-axis. Must be a vector.}
 
-\item{data}{a data frame in which to evaluate formulas.}
-
-\item{xlab}{optional. Text for x-axis title label for produced graph.}
-
-\item{ylab}{optional. Text for y-axis title label for produced graph.}
+\item{y}{a designation for a variable on the y-axis. Must be a vector.}
 }
 \description{
 Fit a linear, exponential, and logistic growth model to two variables and plot the model.
 }
-\details{
-This function is one of a group of functions that take a specific input in the form of \code{y ~ x}, following (in-part) the mosaic package formula notation. However, only simple formulas are allowed with no grouping parameter, nor multiple predictor variables.
-}
 \examples{
 data(wolf)
-wolf <- wolf \%>\%
-  mutate(Time = Year - min(Year))
-tripleFit(Number ~ Time, data=wolf)
+wolf$Time <- wolf$Year - min(wolf$Year)
+tripleFit(wolf$Time, wolf$Number)
 
 }
 \seealso{
