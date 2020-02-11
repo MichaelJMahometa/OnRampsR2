@@ -4,14 +4,19 @@
 \alias{logisticFitPred}
 \title{Logistic Growth Fit and plot of data with a predicted value}
 \usage{
-logisticFitPred(x, y, xval, xlab = deparse(substitute(x)),
-  ylab = deparse(substitute(y)), newxlim = NULL, newylim = NULL,
-  showpred = TRUE)
+logisticFitPred(
+  simpleformula,
+  data,
+  xval,
+  xlab = NULL,
+  ylab = NULL,
+  newxlim = NULL,
+  newylim = NULL,
+  showpred = TRUE
+)
 }
 \arguments{
-\item{x}{a designation for a variable on the x-axis. Can be a vector or object.}
-
-\item{y}{a designation for a variable on the y-axis. Can be a vector or object.}
+\item{simpleformula}{a designation for the model formula in \code{y ~ x} notation. Must be in formula notation--see details.}
 
 \item{xval}{a value of x that you wish to see a predicted value for.}
 
@@ -23,21 +28,17 @@ logisticFitPred(x, y, xval, xlab = deparse(substitute(x)),
 
 \item{newylim}{optional. Custom limits for the y axis.}
 
-\item{showpred}{logical. Should the predicted point value be plotted on the graph?
-
-#' @seealso
-\code{\link{linFit}}
-\code{\link{expFitPred}}
-\code{\link{logisticFitPred}}}
+\item{showpred}{logical. Should the predicted point value be plotted on the graph?}
 }
 \description{
 Show where a given predicted value will occur, give an input of x (logistic growth models).
 }
 \examples{
 data(wolf)
-wolf$Time <- wolf$Year - min(wolf$Year)
-logisticFit(wolf$Time, wolf$Number)
-logisticFitPred(wolf$Time, wolf$Number, 6)
+wolf <- wolf \%>\%
+  mutate(Time = Year - min(Year))
+logisticFit(Number ~ Time, data=wolf)
+logisticFitPred(Number ~ Time, data=wolf, xval=6)
 
 }
 \seealso{
