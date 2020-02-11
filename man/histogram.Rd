@@ -4,8 +4,15 @@
 \alias{histogram}
 \title{Create a Histogram}
 \usage{
-histogram(x, breaks = NULL, table = FALSE, right = FALSE,
-  xlab = deparse(substitute(x)), title = NULL, ...)
+histogram(
+  x,
+  breaks = NULL,
+  table = FALSE,
+  right = FALSE,
+  xlab = deparse(substitute(x)),
+  title = NULL,
+  ...
+)
 }
 \arguments{
 \item{x}{Variable to be plotted.}
@@ -39,3 +46,4 @@ histogram(mtcars$hp, breaks=seq(50, 350, by=25))
 histogram(mtcars$hp, breaks=seq(50, 350, by=25), table=TRUE)
 
 }
+\keyword{internal}
